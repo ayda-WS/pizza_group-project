@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Cart</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4e7ce;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .cart-item {
+        background: #7b3e09;
+        border-radius: 15px;
+        padding: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        color: white;
+    }
+
+    .cart-item img {
+        width: 150px;
+        height: 110px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .item-details {
+        flex: 1;
+        padding-left: 15px;
+    }
+
+    .item-details h3 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+    }
+
+    .item-details p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .qty-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .qty-control button {
+        background: #f7c38b;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .item-actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .edit-btn, .delete-btn {
+        background: #ffffff;
+        border: none;
+        padding: 8px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .add-more {
+        background: #ee5731;
+        padding: 15px;
+        text-align: center;
+        border-radius: 12px;
+        color: white;
+        font-size: 20px;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>🛒 MY CART</h1>
+
+<!-- ITEM 1 -->
+<div class="cart-item">
+    <img src="pepperoni.jpg" alt="Pepperoni Pizza">
+
+    <div class="item-details">
+        <h3>Pepperoni Pizza (L)</h3>
+        <p>₱899.00</p>
+
+        <div class="qty-control">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+        </div>
+    </div>
+
+    <div class="item-actions">
+        <button class="edit-btn">✏️</button>
+        <button class="delete-btn">🗑️</button>
+    </div>
+</div>
+
+<!-- ITEM 2 -->
+<div class="cart-item">
+    <img src="spaghetti.jpg" alt="Spaghetti">
+
+    <div class="item-details">
+        <h3>Spaghetti Bolognese</h3>
+        <p>₱560.00</p>
+
+        <div class="qty-control">
+            <button>-</button>
+            <span>2</span>
+            <button>+</button>
+        </div>
+    </div>
+
+    <div class="item-actions">
+        <button class="edit-btn">✏️</button>
+        <button class="delete-btn">🗑️</button>
+    </div>
+</div>
+
+<!-- ITEM 3 -->
+<div class="cart-item">
+    <img src="matcha.jpg" alt="Matcha Latte">
+
+    <div class="item-details">
+        <h3>Matcha Latte</h3>
+        <p>₱750.00</p>
+
+        <div class="qty-control">
+            <button>-</button>
+            <span>5</span>
+            <button>+</button>
+        </div>
+    </div>
+
+    <div class="item-actions">
+        <button class="edit-btn">✏️</button>
+        <button class="delete-btn">🗑️</button>
+    </div>
+</div>
+
+<!-- ITEM 4 -->
+<div class="cart-item">
+    <img src="bbq.jpg" alt="BBQ Chicken Pizza">
+
+    <div class="item-details">
+        <h3>BBQ Chicken Pizza (L)</h3>
+        <p>₱970.00</p>
+
+        <div class="qty-control">
+            <button>-</button>
+            <span>5</span>
+            <button>+</button>
+        </div>
+    </div>
+
+    <div class="item-actions">
+        <button class="edit-btn">✏️</button>
+        <button class="delete-btn">🗑️</button>
+    </div>
+</div>
+
+<div class="add-more">＋ Add more to cart</div>
+
+</body>
+</html>
