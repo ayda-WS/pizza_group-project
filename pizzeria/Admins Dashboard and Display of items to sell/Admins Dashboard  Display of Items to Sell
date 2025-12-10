@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzeria Menu</title>
+
+<style>
+    /* GLOBAL SETTINGS */
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4e4c3;
+    }
+
+    /* HEADER */
+    header {
+        background-color: #8b3a1a;
+        padding: 15px 20px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header input {
+        padding: 8px 14px;
+        border-radius: 20px;
+        border: none;
+        width: 180px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        background-color: #8b3a1a;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .hero h1 {
+        margin: 0 0 10px;
+        font-size: 40px;
+    }
+
+    /* CATEGORY BAR */
+    .categories {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 10px 15px;
+    }
+    .categories div {
+        background: #8b3a1a;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    /* SECTION TITLE */
+    h2 {
+        margin-left: 15px;
+        margin-top: 25px;
+        color: #7a3417;
+        font-size: 26px;
+    }
+
+    /* PRODUCT GRID (FULLY RESPONSIVE) */
+    .product-row {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* mobile default */
+        gap: 20px;
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    /* Horizontal sliding for mobile */
+    @media (max-width: 600px) {
+        .product-row {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+        }
+        .product {
+            min-width: 180px;
+        }
+    }
+
+    /* Larger screens: convert to grid */
+    @media (min-width: 600px) {
+        .product-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 900px) {
+        .product-row {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (min-width: 1200px) {
+        .product-row {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    /* PRODUCT CARD */
+    .product {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .product img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    .info {
+        padding: 12px;
+    }
+    .name {
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .item-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .price {
+        color: #8b3a1a;
+        font-weight: bold;
+    }
+    .add-btn {
+        background: #8b3a1a;
+        color: white;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 28px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+        background-color: #7a3417;
+        color: white;
+        padding: 30px 20px;
+        margin-top: 50px;
+    }
+    footer div {
+        margin: 8px 0;
+        font-size: 16px;
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+    <div><strong>Pizzeria</strong></div>
+    <input type="text" placeholder="Search">
+</header>
+
+<div class="hero">
+    <h1>Pizza Overload!</h1>
+    <p>A flavor-packed feast loaded with cheese, pepperoni, mushrooms, olives, and basil.</p>
+</div>
+
+<div class="categories">
+    <div>Pizzas</div>
+    <div>Burgers</div>
+    <div>Pastas</div>
+    <div>Beverages</div>
+    <div>Desserts</div>
+    <div>Snacks</div>
+    <div>Add-ons</div>
+</div>
+
+<!-- PIZZA SECTION -->
+<h2>Pizza</h2>
+<div class="product-row">
+
+    <div class="product">
+        <img src="Pepperoni-Pizza (1).jpg">
+        <div class="info">
+            <div class="name">Pepperoni Pizza</div>
+            <div class="item-bottom">
+                <div class="price">₱299 - ₱899</div>
+                <div class="add-btn">+</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="Margherita Pizza.jpg">
+        <div class="info">
+            <div class="name">Margherita Pizza</div>
+            <div class="item-bottom">
+                <div class="price">₱330 - ₱1100</div>
+                <div class="add-btn">+</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="Veggie Pizza.jpg">
+        <div class="info">
+            <div class="name">Veggie Pizza</div>
+            <div class="item-bottom">
+                <div class="price">₱390 - ₱1200</div>
+                <div class="add-btn">+</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- BEVERAGES -->
+<h2>Beverages</h2>
+<div class="product-row">
+
+    <div class="product">
+        <img src="Iced Tea.jpg">
+        <div class="info">
+            <div class="name">Iced Tea</div>
+            <div class="item-bottom">
+                <div class="price">₱90.00</div>
+                <div class="add-btn">+</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="Matcha Latte.jpg">
+        <div class="info">
+            <div class="name">Matcha Latte</div>
+            <div class="item-bottom">
+                <div class="price">₱150.00</div>
+                <div class="add-btn">+</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="Coke.jpg">
+        <div class="info">
+            <div class="name">Coke</div>
+            <div class="item-bottom">
+                <div class="price">₱75.00</div>
+                <div class="add-btn">+</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div>About</div>
+    <div>Contact</div>
+    <div>Services</div>
+    <div>Company</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzeria Menu</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+         background: url('Background.png') no-repeat center center fixed;
+        background-size: cover;
+    }
+header {
+        background-color: #6a2e1a;
+        padding: 12px 20px;
+        color: rgb(250, 250, 250);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 25px;
+        background: #692c17;
+        color: rgb(250, 250, 250);
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        font-size: 20px;
+    }
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .logo {
+        height: 40px;
+        background: #dbb54d;
+        border-radius: 100px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .search-box input {
+        padding: 20px 55px;
+        border-radius: 30px;
+        border: none;
+        width: 200px;
+    }
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        font-weight: 500;
+    }
+    .icons {
+        font-size: 25px;
+        display: flex;
+        gap: 15px;
+    }
+
+   
+    .hero {
+        background-color: #642a17;
+        color: rgb(255, 255, 255);
+        padding: 30px 30px;
+        text-align: center;
+        
+    }
+
+    .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10%;
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    margin: 10 15 20px;
+}
+
+.hero-text p {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background: #dbb54d;
+    border-radius: 50%;
+   
+    
+}
+
+.hero-img img {
+    width: 550px;
+    height: 550px;
+    max-width: 550px; 
+    object-fit: contain;
+    max-height: 550px;
+    
+
+}
+
+
+@media (max-width: 800px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-img img {
+        max-width: 400px;
+    }
+}
+
+
+    
+    .category-bar {
+        display: flex;
+        overflow-x: auto;
+        gap: 70px;
+        padding: 20px 15px;
+        background: #6a2e1a;
+        border-radius: 100px;
+        white-space: nowrap;
+        
+    }
+    .category-bar::-webkit-scrollbar { display: none; }
+
+    .category-item {
+        text-align: center;
+        color: white;
+        width: 150px;
+    }
+    .category-item img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: contain;
+        background: #dbb54d;
+    }
+
+   
+    h2 {
+        margin: 40px 25px 15px;
+        color: #5c2911;
+    }
+
+    
+    .slider-container {
+        position: relative;
+        margin: 0 20px 30px;
+    }
+
+    .slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding-bottom: 10px;
+    }
+
+    .slider::-webkit-scrollbar { display: none; }
+
+   
+    .product-card {
+        min-width: 250px;
+       background: #6a2e1a ; 
+        overflow: hidden;
+       border-radius: 20px;
+        position: relative;
+    }
+    .product-card img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+    }
+    .product-info {
+        padding: 10px;
+        
+    }
+    .product-info h3 {
+        margin: 1px 1px 0px;
+        font-size: 25px;
+        color: #faf8f8;
+        background: #ebc14d9d;
+       
+    }
+    .price {
+        font-weight: bold;
+        color: #faf8f8;
+        font-size: 25px;
+        margin: 10px 1px 0px;
+    }
+    .rating {
+        color: #f7d92e;
+        font-size: 20px;
+        margin: 20px 1px 0px;
+    }
+     .add-btn {
+        background: #dbb54d;
+        color: #fdfcfc;
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 70px;
+        font-size: 50px;
+        cursor: pointer;
+        position: relative;
+        left: 150px;
+        bottom: 40px;
+        
+    }
+
+    
+    .arrow {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        background: #6a2e1aa2;
+        color: white;
+        padding: 10px;
+        font-size: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .left-arrow { left: -10px; }
+    .right-arrow { right: -10px; }
+
+    
+    .footer {
+        background: #6a2e1a;
+        padding: 40px 20px;
+        color: white;
+        margin-top: 50px;
+    }
+    .footer a {
+        display: block;
+        margin: 8px 0;
+        color: white;
+        text-decoration: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="nav-left">
+        <img src="Pizzeria logo (1).png" class="logo">
+        <div class="search-box"><input type="text" placeholder="Search"></div>
+    </div>
+
+    <div class="nav-links">
+        <span>Menu</span>
+        <span>Trending</span>
+        <span>About Us</span>
+    </div>
+
+    <div class="icons"> 🛒 👤</div>
+</div>
+
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Pizza Overload!</h1>
+        <p>A flavor-packed feast for true pizza lovers. Loaded with layers of malty cheese, savory peperoni,
+            earthy mushrooms, briny blac olives and finished withfresh basil for a burst of aroma. Every bite is an explosion
+            of bold satisfying flavor.This is not your average pizza, it's an overload of everything you crave.
+        </p>
+        
+    </div>
+
+
+    <div class="hero-img">
+        <img src="pizza photo.png" alt="Food Preview">
+    </div>
+</section>
+
+
+
+<h2>Menu Category</h2>
+<div class="category-bar">
+    <div class="category-item"><img src="Pizza.png"><div>Pizzas</div></div>
+    <div class="category-item"><img src="Burgers.png"><div>Burgers</div></div>
+    <div class="category-item"><img src="Pastas.png"><div>Pastas</div></div>
+    <div class="category-item"><img src="Beverages.png"><div>Beverages</div></div>
+    <div class="category-item"><img src="Desserts.png"><div>Desserts</div></div>
+    <div class="category-item"><img src="Snacks.png"><div>Snacks</div></div>
+    <div class="category-item"><img src="Add Ons.png"><div>Add Ons</div></div>
+
+</div>
+
+
+<h2>Pizzas</h2>
+<div class="slider-container">
+    <div class="arrow left-arrow" onclick="slideLeft('pizza-slider')">❮</div>
+
+    <div class="slider" id="pizza-slider">
+        <div class="product-card">
+            <img src="Pepperoni-Pizza (1).jpg">
+            <div class="product-info">
+                <h3>Pepperoni Pizza</h3>
+                <div class="price">₱299 - ₱899</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="Margherita Pizza.jpg">
+            <div class="product-info">
+                <h3>Margherita Pizza</h3>
+                <div class="price">₱330 - ₱1100</div>
+                <div class="rating">4.5 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        
+        <div class="product-card">
+            <img src="BBQ-Chicken-Pizza-4.jpg">
+            <div class="product-info">
+                <h3>BBQ Chicken Pizza</h3>
+                <div class="price">₱330 - ₱1100</div>
+                <div class="rating">4.5 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="supreme pizza.jpg">
+            <div class="product-info">
+                <h3>Supreme Pizza </h3>
+                <div class="price">₱450 - ₱1100</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+
+<div class="product-card">
+            <img src="tandoori pizza.jpg">
+            <div class="product-info">
+                <h3>Tandoori Pizza</h3>
+                <div class="price">₱430 - ₱1100</div>
+                <div class="rating">4.9 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+<div class="product-card">
+            <img src="pizza bianca.jpg">
+            <div class="product-info">
+                <h3>Pizza Bianca</h3>
+                <div class="price">₱430 - ₱1100</div>
+                <div class="rating">4.9 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+
+        
+
+<div class="product-card">
+            <img src="Veggie Pizza.jpg">
+            <div class="product-info">
+                <h3>Veggie Pizza</h3>
+                <div class="price">₱390 - ₱1200</div>
+                <div class="rating">4.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+    </div>
+
+    <div class="arrow right-arrow" onclick="slideRight('pizza-slider')">❯</div>
+</div>
+
+
+<h2>Beverages</h2>
+<div class="slider-container">
+    <div class="arrow left-arrow" onclick="slideLeft('drinks-slider')">❮</div>
+
+    <div class="slider" id="drinks-slider">
+        <div class="product-card">
+            <img src="Iced Tea.jpg">
+            <div class="product-info">
+                <h3>Iced Tea</h3>
+                <div class="price">₱90.00</div>
+                <div class="rating">4.9 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="Matcha Latte.jpg">
+            <div class="product-info">
+                <h3>Matcha Latte</h3>
+                <div class="price">₱150.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+
+        </div><div class="product-card">
+            <img src="peach iced tea.jpg">
+            <div class="product-info">
+                <h3>Peach Iced Tea</h3>
+                <div class="price">₱150.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        
+
+<div class="product-card">
+            <img src="bubble gum.jpg">
+            <div class="product-info">
+                <h3>Bubble Gum</h3>
+                <div class="price">₱150.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+<div class="product-card">
+            <img src="fruit soda.jpg">
+            <div class="product-info">
+                <h3>Fruit Soda</h3>
+                <div class="price">₱150.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="classic lemonade.jpg">
+            <div class="product-info">
+                <h3>Classic Lemonade</h3>
+                <div class="price">₱150.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="Coke.jpg">
+            <div class="product-info">
+                <h3>Coca-Cola</h3>
+                <div class="price">₱75.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+    </div>
+
+    <div class="arrow right-arrow" onclick="slideRight('drinks-slider')">❯</div>
+</div>
+
+
+<h2>Burgers</h2>
+<div class="slider-container">
+    <div class="arrow left-arrow" onclick="slideLeft('burger-slider')">❮</div>
+
+    <div class="slider" id="burger-slider">
+
+        <div class="product-card">
+            <img src="shrimp burger.jpg">
+            <div class="product-info">
+                <h3>Shrimp Filet Mignon</h3>
+                <div class="price">₱150.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="Crispy Chicken Sandwiches.jpg">
+            <div class="product-info">
+                <h3>Crispy Chicken Burger</h3>
+                <div class="price">₱180.00</div>
+                <div class="rating">4.8 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="double patty.jpg">
+            <div class="product-info">
+                <h3>Double Patty Wooper</h3>
+                <div class="price">₱200.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="alaking.jpg">
+            <div class="product-info">
+                <h3>Ala King Burger</h3>
+                <div class="price">₱145.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="bacon burger.jpg">
+            <div class="product-info">
+                <h3>Bacon Burger</h3>
+                <div class="price">₱180.00</div>
+                <div class="rating">4.8 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+         <div class="product-card">
+            <img src="bacon burger.jpg">
+            <div class="product-info">
+                <h3>Bacon Burger</h3>
+                <div class="price">₱180.00</div>
+                <div class="rating">4.8 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+
+    </div>
+
+    <div class="arrow right-arrow" onclick="slideRight('burger-slider')">❯</div>
+</div>
+
+
+<h2>Pastas</h2>
+<div class="slider-container">
+    <div class="arrow left-arrow" onclick="slideLeft('pasta-slider')">❮</div>
+
+    <div class="slider" id="pasta-slider">
+
+        <div class="product-card">
+            <img src="carbonara.jpeg">
+            <div class="product-info">
+                <h3>Carbonara</h3>
+                <div class="price">₱180.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="spaghetti-bolognese-36.jpg">
+            <div class="product-info">
+                <h3>Spaghetti Bolognese</h3>
+                <div class="price">₱150.00</div>
+                <div class="rating">4.8 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="Chicken Alfredo.jpg">
+            <div class="product-info">
+                <h3>Chicken Alfredo</h3>
+                <div class="price">₱200.00</div>
+                <div class="rating">4.9 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="Creamy Pesto Chicken Skillet.jpeg">
+            <div class="product-info">
+                <h3>Creamy Pesto Chicken</h3>
+                <div class="price">₱275.00</div>
+                <div class="rating">5.0 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+        <div class="product-card">
+            <img src="Chicken Alfredo.jpg">
+            <div class="product-info">
+                <h3>Chicken alfredo</h3>
+                <div class="price">₱150.00</div>
+                <div class="rating">4.8 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+         <div class="product-card">
+            <img src="Chicken Alfredo.jpg">
+            <div class="product-info">
+                <h3>Chicken alfredo</h3>
+                <div class="price">₱150.00</div>
+                <div class="rating">4.8 ★</div>
+            </div>
+            <div class="add-btn">+</div>
+        </div>
+
+    </div>
+
+    <div class="arrow right-arrow" onclick="slideRight('pasta-slider')">❯</div>
+</div>
+
+
+<div class="footer">
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Services</a>
+    <a href="#">Company</a>
+</div>
+
+<script>
+function slideLeft(id) {
+    document.getElementById(id).scrollBy({ left: -250, behavior: "smooth" });
+}
+function slideRight(id) {
+    document.getElementById(id).scrollBy({ left: 250, behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
